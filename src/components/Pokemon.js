@@ -10,30 +10,36 @@ function Pokemon(props) {
       </tr>
     );
   });
+
+  const typeDesc = pokemon.types.length > 1 ? "Types" : "Type";
+
   return (
-    <div>
+    <div className="pokemon">
       <div className="pokemon-image">
         <img src={pokemon.image} alt={pokemon.name}></img>
       </div>
-      <h3 className="pokemon-name">{pokemon.name}</h3>
+      <div className="pokemon-name">{pokemon.name}</div>
       <div className="pokemon-meta">
-        <span>MaxHP: {pokemon.maxHP}</span> <br />
+        <span>Pokedex #{pokemon.number}</span>
+        <span>
+          {typeDesc}: {pokemon.types.join(", ")}
+        </span>
+        <span>MaxHP: {pokemon.maxHP}</span>
         <span>MaxCP: {pokemon.maxCP}</span>
       </div>
+      <br />
       <div className="pokemon-attacks">
         <table>
           <caption>Special Attacks</caption>
           <tbody>
             <tr>
-              <th>Name</th>
+              <th>Move</th>
               <th>Damage</th>
             </tr>
             {spAttacks}
           </tbody>
         </table>
       </div>
-
-      <hr></hr>
     </div>
   );
 }
