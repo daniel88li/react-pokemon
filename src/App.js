@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <h1>Pokemon data</h1>
+      <h1>Pokemon Data Centre</h1>
       <ApolloProvider client={client}>
         <main>
           <PokemonContainer />
